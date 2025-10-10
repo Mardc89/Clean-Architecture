@@ -14,7 +14,7 @@ namespace App.RepositoryEFCore.DataContext
         {
             var OptionBuilder = new DbContextOptionsBuilder<AppDbContext>();
 
-          //  OptionBuilder.UseNpgsql("Host=127.0.0.1;Port=5432;Database=template;User Id=postgres;Password=9902;");
+            OptionBuilder.UseNpgsql("Host=127.0.0.1;Port=5432;Database=BDClean;User Id=postgres;Password=pos12345;");
 
             return new AppDbContext(OptionBuilder.Options);
 
