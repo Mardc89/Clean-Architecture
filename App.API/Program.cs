@@ -1,6 +1,11 @@
 using App.IoC;
 using App.RepositoryEFCore.DataContext;
 using Microsoft.EntityFrameworkCore;
+using FluentValidation;
+using App.API;
+
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +19,8 @@ builder.Services.AddAppDependencies(builder.Configuration);
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("Template")));
+
+builder.Services.AddValidationLayer();
 
 
 var app = builder.Build();
